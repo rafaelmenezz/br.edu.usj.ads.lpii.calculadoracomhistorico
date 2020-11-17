@@ -33,7 +33,7 @@
                     <div class="row">
                         <div class="col-lg-12 overflow-hidden" style="height: 100px; width: 75px;">
                             <ul class="list-unstyled">
-                                <li th:if="${operacoes != null}" th:each="item : ${operacoes}" th:text="${item}"></li>
+                                <li th:if="${operacoes != null}" th:each="item : ${operacoes}" th:text="${item.operacao}"></li>
                             </ul>
                            
                         </div>

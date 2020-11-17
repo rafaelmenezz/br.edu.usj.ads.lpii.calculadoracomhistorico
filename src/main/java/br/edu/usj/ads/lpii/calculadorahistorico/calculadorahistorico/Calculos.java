@@ -2,22 +2,33 @@ package br.edu.usj.ads.lpii.calculadorahistorico.calculadorahistorico;
 
 import java.text.DecimalFormat;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@NoArgsConstructor
+@Getter
+@Setter
 public class Calculos {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	@Column
 	private String operacao;
 
-
-    public Calculos(String op){
-        this.operacao = op;
-    }
-
-	public String getOperacao() {
-		return operacao;
-	}
-	// método setter para receber a operacao
-	public void setOperacao(String operacao) {
+	public Calculos(String operacao){
 		this.operacao = operacao;
 	}
+
 
 	//método que recebe toda a string e realiza o cáculo e retorna o resultado 
 	public String retornaResultado() {
